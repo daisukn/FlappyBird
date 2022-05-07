@@ -1,14 +1,19 @@
-//
-//  main.cpp
-//  FlappyBird
-//
-//  Created by Daisuke Nishimori on 2022/05/07.
-//
+#include "Application.h"
 
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+// エントリポイント
+int main(int, char**)
+{
+    Application* app = new Application();
+    
+    if (app->Initialize())
+    {
+        app->RunLoop();
+    }
+    app->Shutdown();
+    
+    delete app;
     return 0;
 }
+
+
+
